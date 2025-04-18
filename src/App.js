@@ -361,7 +361,16 @@ export default function Portfolio() {
                   "Deployed and styled with dynamic feedback",
                 ],
               },
-
+              {
+                name: "Urban Estimator – Real Estate Price Prediction",
+                desc: "A machine learning project to predict housing prices using scikit-learn and a user-friendly interface built with Gradio.",
+                link: "https://huggingface.co/spaces/Aashiue/Real_Estate_Price_Prediction", // or GitHub link if preferred
+                bullets: [
+                  "Trained Linear Regression, Lasso, and Decision Tree models on Bangalore housing dataset",
+                  "Used GridSearchCV to tune hyperparameters and boost prediction accuracy to 84%",
+                  "Implemented an interactive Gradio interface for real-time price prediction by users"
+                ]
+              },
               {
                 name: "Note Taking App",
                 desc: "A simple browser-based note-taking tool built using HTML and JavaScript with local storage support.",
@@ -485,12 +494,12 @@ export default function Portfolio() {
               },
               {
                 name: "SweetPred",
-                desc: "An AI-based tool to predict molecular sweetness from SMILES using Random Forests and RDKit.",
-                link: "#",
+                desc: "Improved and deployed an AI-based web tool for molecular sweetness prediction by integrating JSME editor and refining the UI using Flask.",
+                link: "https://cosylab.iiitd.edu.in/sweetpred/",
                 bullets: [
-                  "Trained on SMILES data with molecular descriptors via RDKit",
-                  "Used Random Forest model for classification-based sweetness prediction",
-                  "Built Flask web app and deployed with user-friendly UI",
+                  "Enhanced the UI of the SweetPred web app for better user experience",
+                  "Integrated JSME Molecular Editor for drawing chemical structures",
+                  "Deployed the updated version using Flask and hosted it with user-friendly access"
                 ],
               },
               {
