@@ -502,16 +502,16 @@ export default function Portfolio() {
                   "Deployed the updated version using Flask and hosted it with user-friendly access"
                 ],
               },
-              {
-                name: "Programmable Proxy",
-                desc: "Dynamic protocol switching for distributed microservices across datacenters using Go, MQTT, HTTP.",
-                link: "#",
-                bullets: [
-                  "Implements dynamic protocol switching logic across HTTP and MQTT",
-                  "Built using Go, tested over custom TCP channels and brokers",
-                  "Handles multi-cloud microservice routing with performance insights",
-                ],
-              },
+              // {
+              //   name: "Programmable Proxy",
+              //   desc: "Dynamic protocol switching for distributed microservices across datacenters using Go, MQTT, HTTP.",
+              //   link: "#",
+              //   bullets: [
+              //     "Implements dynamic protocol switching logic across HTTP and MQTT",
+              //     "Built using Go, tested over custom TCP channels and brokers",
+              //     "Handles multi-cloud microservice routing with performance insights",
+              //   ],
+              // },
             ].map((proj) => (
               <div key={proj.name} style={{ marginBottom: "1.8rem" }}>
                 <div
