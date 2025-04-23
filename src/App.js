@@ -1,4 +1,5 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Portfolio() {
   const colors = {
@@ -26,6 +27,7 @@ export default function Portfolio() {
     backgroundColor: colors.cream,
     borderLeft: `10px solid ${colors.teal}`,
     transition: "transform 0.3s ease-in-out",
+    fontWeight: "520",
   };
 
   const linkStyle = {
@@ -115,7 +117,7 @@ export default function Portfolio() {
           flexWrap: "wrap",
         }}
       >
-        <span className="rainbow-text">Aashi</span>
+        <span style={{ textAlign: "center", fontSize: "1.5em" }}> Aashi </span>
         <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
           {["about", "experience", "projects", "education", "contact"].map(
             (section) => (
@@ -149,13 +151,21 @@ export default function Portfolio() {
               color: colors.darkBlue,
             }}
           >
-            Hi, I'm Aashi
+            <Typewriter
+              words={["Hi, I'm Aashi", "Coder", "Guitarist"]}
+              loop={false}
+              cursor
+              cursorStyle="|"
+              typeSpeed={120}
+              deleteSpeed={70}
+              delaySpeed={1000}
+            />
           </h1>
           <p
             style={{
               fontSize: "1.2rem",
               color: colors.teal,
-              fontWeight: "500",
+              fontWeight: "550",
             }}
           >
             Coder | Guitarist
@@ -181,7 +191,13 @@ export default function Portfolio() {
           >
             About Me
           </h2>
-          <p style={{ lineHeight: "1.6", color: colors.darkBlue }}>
+          <p
+            style={{
+              lineHeight: "1.6",
+              color: colors.darkBlue,
+              fontWeight: "520",
+            }}
+          >
             I'm Aashi, a passionate software developer who enjoys building
             efficient systems, exploring networks, and turning complex ideas
             into reality. Currently diving into distributed systems, protocol
@@ -336,6 +352,60 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Skills */}
+        <section
+          id="skills"
+          style={{
+            ...sectionStyle,
+            marginBottom: "2rem",
+            borderLeft: `6px solid ${colors.steelBlue}`,
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: "600",
+              marginBottom: "1rem",
+              color: colors.orange,
+            }}
+          >
+            Skills
+          </h2>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            {[
+              "JavaScript",
+              "React.js",
+              "Tailwind CSS",
+              "Node.js",
+              "Python",
+              "Flask",
+              "Go",
+              "C++",
+              "Java",
+              "Git & GitHub",
+              "Docker",
+              "Linux",
+              "SQL",
+              "MongoDB",
+              "Networking",
+            ].map((skill) => (
+              <span
+                key={skill}
+                style={{
+                  backgroundColor: colors.teal,
+                  color: colors.cream,
+                  padding: "0.4rem 0.8rem",
+                  borderRadius: "30px",
+                  fontSize: "0.9rem",
+                  fontWeight: "600",
+                }}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
+
         {/* Projects */}
         <section id="projects" style={{ marginBottom: "2rem" }}>
           <h2
@@ -368,8 +438,8 @@ export default function Portfolio() {
                 bullets: [
                   "Trained Linear Regression, Lasso, and Decision Tree models on Bangalore housing dataset",
                   "Used GridSearchCV to tune hyperparameters and boost prediction accuracy to 84%",
-                  "Implemented an interactive Gradio interface for real-time price prediction by users"
-                ]
+                  "Implemented an interactive Gradio interface for real-time price prediction by users",
+                ],
               },
               {
                 name: "Note Taking App",
@@ -499,7 +569,7 @@ export default function Portfolio() {
                 bullets: [
                   "Enhanced the UI of the SweetPred web app for better user experience",
                   "Integrated JSME Molecular Editor for drawing chemical structures",
-                  "Deployed the updated version using Flask and hosted it with user-friendly access"
+                  "Deployed the updated version using Flask and hosted it with user-friendly access",
                 ],
               },
               // {
@@ -566,59 +636,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Skills */}
-        <section
-          id="skills"
-          style={{
-            ...sectionStyle,
-            marginBottom: "2rem",
-            borderLeft: `6px solid ${colors.steelBlue}`,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "1.5rem",
-              fontWeight: "600",
-              marginBottom: "1rem",
-              color: colors.orange,
-            }}
-          >
-            Skills
-          </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
-            {[
-              "JavaScript",
-              "React.js",
-              "Tailwind CSS",
-              "Node.js",
-              "Python",
-              "Flask",
-              "Go",
-              "C++",
-              "Java",
-              "Git & GitHub",
-              "Docker",
-              "Linux",
-              "SQL",
-              "MongoDB",
-              "Networking",
-            ].map((skill) => (
-              <span
-                key={skill}
-                style={{
-                  backgroundColor: colors.teal,
-                  color: colors.cream,
-                  padding: "0.4rem 0.8rem",
-                  borderRadius: "30px",
-                  fontSize: "0.9rem",
-                  fontWeight: "600",
-                }}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </section>
+        
 
         {/* Education */}
         <section id="education" style={{ marginBottom: "2rem" }}>
@@ -735,6 +753,7 @@ export default function Portfolio() {
             ...sectionStyle,
             marginBottom: "2rem",
             borderLeft: `6px solid ${colors.teal}`,
+            fontWeight: "550",
           }}
         >
           <h2
@@ -782,6 +801,7 @@ export default function Portfolio() {
             ...sectionStyle,
             marginBottom: "2rem",
             borderLeft: `6px solid ${colors.peach}`,
+            // fontWeight: "550"
           }}
         >
           <h2
@@ -800,6 +820,7 @@ export default function Portfolio() {
               fontSize: "0.95rem",
               color: colors.darkBlue,
               lineHeight: "1.7",
+              fontWeight: "550",
             }}
           >
             <li> Playing and listening to music.</li>
