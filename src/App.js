@@ -198,10 +198,7 @@ export default function Portfolio() {
               fontWeight: "520",
             }}
           >
-            I'm Aashi, a passionate software developer who enjoys building
-            efficient systems, exploring networks, and turning complex ideas
-            into reality. Currently diving into distributed systems, protocol
-            switching, and AI-powered applications.
+            I'm Aashi, a passionate computer science student who enjoys solving real-world problems through code.
           </p>
         </section>
 
@@ -375,15 +372,15 @@ export default function Portfolio() {
             {[
               "JavaScript",
               "React.js",
-              "Tailwind CSS",
+              // "Tailwind CSS",
               "Node.js",
               "Python",
-              "Flask",
+              // "Flask",
               "Go",
               "C++",
-              "Java",
+              // "Java",
               "Git & GitHub",
-              "Docker",
+              // "Docker",
               "Linux",
               "SQL",
               "MongoDB",
