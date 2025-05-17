@@ -119,7 +119,7 @@ export default function Portfolio() {
       >
         <span style={{ textAlign: "center", fontSize: "1.5em" }}> Aashi </span>
         <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-          {["about", "experience", "projects", "education", "contact"].map(
+          {["~/about", "~/experience", "~/projects", "~/education", "~/contact"].map(
             (section) => (
               <a
                 key={section}
@@ -275,7 +275,7 @@ export default function Portfolio() {
                 >
                   <div>• Decision Making for Multi-robot Systems (CSE667)</div>
                   <div style={{ fontStyle: "italic", color: colors.teal }}>
-                    Jan 2025 – Present
+                    Jan 2025 – May 2025
                   </div>
                   <div>• Introduction to Programming (CSE101)</div>
                   <div style={{ fontStyle: "italic", color: colors.teal }}>
