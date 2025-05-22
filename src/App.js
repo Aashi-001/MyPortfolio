@@ -33,7 +33,7 @@ export default function Portfolio() {
   const linkStyle = {
     color: colors.cream,
     backgroundColor: colors.steelBlue,
-    padding: "0.5rem 1.2rem",
+    padding: "0.5rem 0.7rem",
     borderRadius: "30px",
     border: `2px solid ${colors.teal}`,
     fontWeight: "700",
@@ -119,21 +119,25 @@ export default function Portfolio() {
       >
         <span style={{ textAlign: "center", fontSize: "1.5em" }}> Aashi </span>
         <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-          {["~/about", "~/experience", "~/projects", "~/education", "~/contact"].map(
-            (section) => (
-              <a
-                key={section}
-                href={`#${section}`}
-                style={{
-                  color: colors.cream,
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </a>
-            )
-          )}
+          {[
+            "~/about",
+            "~/experience",
+            "~/projects",
+            "~/education",
+            "~/contact",
+          ].map((section) => (
+            <a
+              key={section}
+              href={`#${section.slice(2)}`}
+              style={{
+                color: colors.cream,
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          ))}
         </div>
       </nav>
 
@@ -198,10 +202,12 @@ export default function Portfolio() {
               fontWeight: "520",
             }}
           >
-            I'm Aashi, a passionate computer science student who enjoys solving real-world problems through code.
+            I'm Aashi, a passionate computer science student who enjoys solving
+            real-world problems through code.
           </p>
         </section>
 
+        <br></br>
         {/* Experience */}
         <section id="experience" style={{ marginBottom: "2rem" }}>
           <h2
@@ -349,6 +355,7 @@ export default function Portfolio() {
           </div>
         </section>
 
+        <br></br>
         {/* Skills */}
         <section
           id="skills"
@@ -403,6 +410,7 @@ export default function Portfolio() {
           </div>
         </section>
 
+        <br></br>
         {/* Projects */}
         <section id="projects" style={{ marginBottom: "2rem" }}>
           <h2
@@ -415,11 +423,17 @@ export default function Portfolio() {
           >
             Projects
           </h2>
-          {/* <div > style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}> */}
-          <div style={cardStyle}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "1.5rem",
+              justifyContent: "space-between",
+            }}
+          >
             {[
               {
-                name: "MyWeather Application",
+                name: "Weatherify",
                 desc: "A full-stack weather dashboard using OpenWeatherMap API for real-time weather updates.",
                 link: "https://weatherifyui.onrender.com/",
                 bullets: [
@@ -429,9 +443,9 @@ export default function Portfolio() {
                 ],
               },
               {
-                name: "Urban Estimator – Real Estate Price Prediction",
+                name: "Urban Estimator",
                 desc: "A machine learning project to predict housing prices using scikit-learn and a user-friendly interface built with Gradio.",
-                link: "https://huggingface.co/spaces/Aashiue/Real_Estate_Price_Prediction", // or GitHub link if preferred
+                link: "https://huggingface.co/spaces/Aashiue/Real_Estate_Price_Prediction",
                 bullets: [
                   "Trained Linear Regression, Lasso, and Decision Tree models on Bangalore housing dataset",
                   "Used GridSearchCV to tune hyperparameters and boost prediction accuracy to 84%",
@@ -439,7 +453,7 @@ export default function Portfolio() {
                 ],
               },
               {
-                name: "Note Taking App",
+                name: "MyNotebook",
                 desc: "A simple browser-based note-taking tool built using HTML and JavaScript with local storage support.",
                 link: "https://github.com/Aashi-001/note_taking_app.github.io",
                 bullets: [
@@ -449,7 +463,7 @@ export default function Portfolio() {
                 ],
               },
               {
-                name: "Verdant Voyages (Techtinkerers Hackout)",
+                name: "Verdant Voyages",
                 desc: "A hackathon project that rewards users for eco-conscious accommodation choices using a full-stack MERN architecture.",
                 link: "https://github.com/Aashi-001/techtinkerers_hackout",
                 bullets: [
@@ -469,17 +483,48 @@ export default function Portfolio() {
                 ],
               },
               {
-                name: "Shell Script Automation",
-                desc: "A collection of custom shell scripts and Python helpers to automate daily development tasks and system setup.",
+                name: "InitMate",
+                desc: "A lightweight CLI utility to automate GitHub repository setup using Python and Bash scripts.",
                 link: "https://github.com/Aashi-001/shell_script_automation.github.io",
                 bullets: [
-                  "Includes Python CLI for dynamic script generation",
-                  "Automates Git setup, diagnostics, file structuring",
-                  "Integrates Bash and Python for hybrid scripting",
+                  "Automates creation and initialization of local and remote GitHub repositories",
+                  "Generates standard file structure: README.md, LICENSE, and .gitignore templates",
+                  "Uses a Python CLI wrapper for dynamic Git command generation and user input handling",
+                  "Simplifies repetitive developer workflows by integrating Git, Bash, and Python automation",
+                ],
+              },
+              {
+                name: "YTDownloader",
+                desc: "A CLI tool to download, trim, and convert YouTube videos using `yt-dlp` and `ffmpeg`.",
+                link: "https://github.com/Aashi-001/ytdownloader",
+                bullets: [
+                  "Downloads high-quality videos using `yt-dlp` and merges streams into MKV format",
+                  "Trims videos between custom start and end times with precise `ffmpeg` control",
+                  "Converts trimmed clips to MP4 with re-encoded audio for universal compatibility",
+                ],
+              },
+              {
+                name: "HTTP Server (from scratch)",
+                desc: "A lightweight static file server built in C, implementing core HTTP/1.0 features.",
+                link: "https://github.com/Aashi-001/http-server",
+                bullets: [
+                  "Built using low-level socket programming (C) without external libraries",
+                  "Serves static files with proper MIME types and HTTP status responses (200, 404, etc.)",
+                  "Implements basic request parsing, error handling, and multithreading",
+                  "Designed based on RFC1945 for learning HTTP protocols and system programming",
                 ],
               },
             ].map((proj) => (
-              <div key={proj.name} style={{ marginBottom: "1.8rem" }}>
+              <div
+                key={proj.name}
+                className="project-card"
+                style={{
+                  ...cardStyle,
+                  width: "48%",
+                  boxSizing: "border-box",
+                  marginBottom: "1rem",
+                }}
+              >
                 <div
                   style={{
                     display: "flex",
@@ -491,109 +536,10 @@ export default function Portfolio() {
                     style={{
                       fontWeight: "700",
                       fontSize: "1.1rem",
-                      marginBottom: "0.5rem",
+                      // marginBottom: "0.5rem",
                       color: colors.darkBlue,
-                    }}
-                  >
-                    {proj.name}
-                  </h3>
-                  <a
-                    href={proj.link}
-                    style={linkStyle}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project →
-                  </a>
-                </div>
-                <p
-                  style={{
-                    fontSize: "0.95rem",
-                    color: colors.darkBlue,
-                    marginBottom: "0.6rem",
-                  }}
-                >
-                  {proj.desc}
-                </p>
-                {proj.bullets && (
-                  <ul
-                    style={{
-                      paddingLeft: "1.2rem",
-                      color: colors.darkBlue,
-                      fontSize: "0.9rem",
-                      lineHeight: "1.5",
-                    }}
-                  >
-                    {proj.bullets.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* College/Capstone Projects */}
-        <section id="college-projects" style={{ marginBottom: "2rem" }}>
-          <h2
-            style={{
-              fontSize: "1.5rem",
-              fontWeight: "600",
-              marginBottom: "1.2rem",
-              color: colors.orange,
-            }}
-          >
-            Academic Projects
-          </h2>
-          <div style={cardStyle}>
-            {[
-              {
-                name: "Speaker Source Separation (REPET, 2DFT, REPET-Sim)",
-                desc: "A team project to isolate speakers' voices from mixed audio using classical signal processing and Random Forest classification.",
-                link: "https://github.com/Aashi-001", // Replace with actual repo link if available
-                bullets: [
-                  "Used nussl's REPET, REPET-Sim, and 2DFT algorithms to separate foreground/background signals",
-                  "Evaluated quality with PSNR, SNR, and KL Divergence metrics",
-                  "Built a Gradio demo to allow users to upload and separate audio files",
-                  "Trained a Random Forest model on extracted time-frequency features for classification",
-                ],
-              },
-              {
-                name: "SweetPred",
-                desc: "Improved and deployed an AI-based web tool for molecular sweetness prediction by integrating JSME editor and refining the UI using Flask.",
-                link: "https://cosylab.iiitd.edu.in/sweetpred/",
-                bullets: [
-                  "Enhanced the UI of the SweetPred web app for better user experience",
-                  "Integrated JSME Molecular Editor for drawing chemical structures",
-                  "Deployed the updated version using Flask and hosted it with user-friendly access",
-                ],
-              },
-              // {
-              //   name: "Programmable Proxy",
-              //   desc: "Dynamic protocol switching for distributed microservices across datacenters using Go, MQTT, HTTP.",
-              //   link: "#",
-              //   bullets: [
-              //     "Implements dynamic protocol switching logic across HTTP and MQTT",
-              //     "Built using Go, tested over custom TCP channels and brokers",
-              //     "Handles multi-cloud microservice routing with performance insights",
-              //   ],
-              // },
-            ].map((proj) => (
-              <div key={proj.name} style={{ marginBottom: "1.8rem" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontWeight: "700",
-                      fontSize: "1.1rem",
-                      marginBottom: "0.5rem",
-                      color: colors.darkBlue,
+                      margin: 0,
+                      flex: 1,
                     }}
                   >
                     {proj.name}
@@ -633,8 +579,115 @@ export default function Portfolio() {
           </div>
         </section>
 
-        
+        <br></br>
+        {/* College/Capstone Projects */}
+        <section id="college-projects" style={{ marginBottom: "2rem" }}>
+          <h2
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: "600",
+              marginBottom: "1.2rem",
+              color: colors.orange,
+            }}
+          >
+            Academic Projects
+          </h2>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "1.5rem",
+              justifyContent: "space-between",
+            }}
+          >
+            {[
+              {
+                name: "Speaker Source Separation",
+                desc: "A team project to isolate speakers' voices from mixed audio using classical signal processing and Random Forest classification.",
+                link: "https://github.com/Aashi-001",
+                bullets: [
+                  "Used nussl's REPET, REPET-Sim, and 2DFT algorithms to separate foreground/background signals",
+                  "Evaluated quality with PSNR, SNR, and KL Divergence metrics",
+                  "Built a Gradio demo to allow users to upload and separate audio files",
+                  "Trained a Random Forest model on extracted time-frequency features for classification",
+                ],
+              },
+              {
+                name: "SweetPred",
+                desc: "Improved and deployed an AI-based web tool for molecular sweetness prediction by integrating JSME editor and refining the UI using Flask.",
+                link: "https://cosylab.iiitd.edu.in/sweetpred/",
+                bullets: [
+                  "Enhanced the UI of the SweetPred web app for better user experience",
+                  "Integrated JSME Molecular Editor for drawing chemical structures",
+                  "Deployed the updated version using Flask and hosted it with user-friendly access",
+                ],
+              },
+            ].map((proj) => (
+              <div
+                key={proj.name}
+                className="project-card"
+                style={{
+                  ...cardStyle,
+                  width: "48%",
+                  boxSizing: "border-box",
+                  marginBottom: "1rem",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontWeight: "700",
+                      fontSize: "1.1rem",
+                      // marginBottom: "0.5rem",
+                      color: colors.darkBlue,
+                      margin: 0,
+                      flex: 1,
+                    }}
+                  >
+                    {proj.name}
+                  </h3>
+                  <a
+                    href={proj.link}
+                    style={linkStyle}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project →
+                  </a>
+                </div>
+                <p
+                  style={{
+                    fontSize: "0.95rem",
+                    color: colors.darkBlue,
+                    marginBottom: "0.6rem",
+                  }}
+                >
+                  {proj.desc}
+                </p>
+                <ul
+                  style={{
+                    paddingLeft: "1.2rem",
+                    color: colors.darkBlue,
+                    fontSize: "0.9rem",
+                    lineHeight: "1.5",
+                  }}
+                >
+                  {proj.bullets.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
 
+        <br></br>
         {/* Education */}
         <section id="education" style={{ marginBottom: "2rem" }}>
           <h2
@@ -672,7 +725,7 @@ export default function Portfolio() {
                     color: colors.teal,
                   }}
                 >
-                  2024 – Present
+                  2024 – 2026
                 </span>
               </div>
               <p
@@ -691,7 +744,7 @@ export default function Portfolio() {
                   color: colors.teal,
                 }}
               >
-                CGPA: 7.5
+                CGPA: 8.31
               </p>
             </div>
             <div>
@@ -709,7 +762,8 @@ export default function Portfolio() {
                     color: colors.darkBlue,
                   }}
                 >
-                  UIET, Panjab University, Chandigarh
+                  University Institute of Engineering and Technology, Panjab
+                  University, Chandigarh
                 </h3>
                 <span
                   style={{
@@ -742,7 +796,7 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-
+        <br></br>
         {/* Extra-Curriculars & Achievements */}
         <section
           id="extras"
@@ -790,7 +844,7 @@ export default function Portfolio() {
             </li>
           </ul>
         </section>
-
+        <br></br>
         {/* Hobbies */}
         <section
           id="hobbies"
