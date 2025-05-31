@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
 export default function Portfolio() {
@@ -93,6 +93,41 @@ export default function Portfolio() {
       }
     }
   `;
+
+  // const cf_resp = fetch('https://codeforces.com/api/user.info?handles=aashi2673&checkHistoricHandles=false');
+  // console.log(cf_resp);
+
+  // async function getUserInfo() {
+  //   const cf_resp = await fetch('https://codeforces.com/api/user.info?handles=aashi2673&checkHistoricHandles=false');
+  //   const data = await cf_resp.json(); // parse JSON
+  //   console.log(data);
+  //   console.log(data.result[0].rating)
+  // }
+
+  // getUserInfo();
+
+  const [cfRating, setCfRating] = useState(null);
+  const [cfRank, setCfRank] = useState(null);
+
+  useEffect(() => {
+    async function getUserInfo() {
+      try {
+        const response = await fetch(
+          "https://codeforces.com/api/user.info?handles=aashi2673"
+        );
+        const data = await response.json();
+        if (data.status === "OK") {
+          console.log(data.result[0]);
+          setCfRating(data.result[0].rating);
+          setCfRank(data.result[0].rank);
+        }
+      } catch (error) {
+        console.error("Failed to fetch Codeforces rating:", error);
+      }
+    }
+
+    getUserInfo();
+  }, []);
 
   return (
     <div style={{...retroFont, background: `linear-gradient(${colors.peach}, ${colors.peach} 30%, ${colors.darkBlue} 60%)`, minHeight: "100vh", padding: "0",}}>
@@ -514,7 +549,7 @@ export default function Portfolio() {
           <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: colors.orange,}}> Coding Profiles </h2>
           <div style={{display: "flex",justifyContent: "center",gap: "2rem",flexWrap: "wrap",}}>
             <a href="https://leetcode.com/aashi_uiet" style={linkStyle} target="_blank" rel="noopener noreferrer">LeetCode (900+ solved)</a>
-            <a href="https://codeforces.com/profile/aashi2673" style={linkStyle} target="_blank" rel="noopener noreferrer"> Codeforces (Pupil - 1242)</a>
+            <a href="https://codeforces.com/profile/aashi2673" style={linkStyle} target="_blank" rel="noopener noreferrer"> Codeforces ({cfRank} - {cfRating ?? "Loading..."})</a>
             <a href="https://www.hackerrank.com/aashi2673" style={linkStyle} target="_blank" rel="noopener noreferrer"> HackerRank (5⭐️ SQL)</a>
           </div>
         </section>
