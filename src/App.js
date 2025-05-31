@@ -514,7 +514,7 @@ export default function Portfolio() {
           <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: colors.orange,}}> Coding Profiles </h2>
           <div style={{display: "flex",justifyContent: "center",gap: "2rem",flexWrap: "wrap",}}>
             <a href="https://leetcode.com/aashi_uiet" style={linkStyle} target="_blank" rel="noopener noreferrer">LeetCode (900+ solved)</a>
-            <a href="https://codeforces.com/profile/aashi2673" style={linkStyle} target="_blank" rel="noopener noreferrer"> Codeforces (Newbie - 1073)</a>
+            <a href="https://codeforces.com/profile/aashi2673" style={linkStyle} target="_blank" rel="noopener noreferrer"> Codeforces (Pupil - 1242)</a>
             <a href="https://www.hackerrank.com/aashi2673" style={linkStyle} target="_blank" rel="noopener noreferrer"> HackerRank (5⭐️ SQL)</a>
           </div>
         </section>
