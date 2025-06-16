@@ -304,15 +304,37 @@ export default function Portfolio() {
           >
             {[
               {
-                name: "Weatherify",
-                desc: "A full-stack weather dashboard using OpenWeatherMap API for real-time weather updates.",
-                link: "https://weatherifyui.onrender.com/",
+                name: "cpuPulse",
+                desc: "A  CLI tool to run arbitrary commands and sample their CPU and memory usage in real-time.",
+                link: "https://github.com/Aashi-001/cpuPulse",
                 bullets: [
-                  "Client-server structure for frontend-backend separation",
-                  "Live weather fetched using OpenWeatherMap API",
-                  "Deployed and styled with dynamic feedback",
+                  "Run arbitrary commands and sample their CPU and memory usage in real-time.",
+                  "Targets burst processes that evade traditional monitoring tools like ‘top‘ or ‘htop‘.",
+                  "Dynamic flag support (–log, –plot) with CSV export and static performance plots.",
+                  "Designed for lightweight usage benchmarking and profiling",
                 ],
               },
+              {
+                name: "Load Balancer",
+                desc: "Custom application-layer load balancer in Go with dynamic request routing and performance benchmarking.",
+                link: "https://github.com/Aashi-001/Load-Balancer",
+                bullets: [
+                  "Built a load balancer in Go that distributes HTTP requests across multiple backend servers using round-robin and weighted strategies.",
+                  "Benchmarked performance under simulated load using concurrent clients and measured response latency and throughput.",
+                  "Implemented custom connection handling, routing logic, and graceful backend failure detection.",
+                ],
+              },
+              {
+                name: "Verdant Voyages",
+                desc: "A hackathon project that rewards users for eco-conscious accommodation choices using a full-stack MERN architecture.",
+                link: "https://github.com/Aashi-001/techtinkerers_hackout",
+                bullets: [
+                  "Team project for a hackathon (3 members)",
+                  "Built eco-score logic to promote green travel",
+                  "Used MongoDB, Express, React, Node.js (MERN stack)",
+                ],
+              },
+
               {
                 name: "Urban Estimator",
                 desc: "A machine learning project to predict housing prices using scikit-learn and a user-friendly interface built with Gradio.",
@@ -321,6 +343,26 @@ export default function Portfolio() {
                   "Trained Linear Regression, Lasso, and Decision Tree models on Bangalore housing dataset",
                   "Used GridSearchCV to tune hyperparameters and boost prediction accuracy to 84%",
                   "Implemented an interactive Gradio interface for real-time price prediction by users",
+                ],
+              },
+              // {
+              //   name: "Graph Visualizer",
+              //   desc: "React-based Dijkstra path visualizer with interactive node editing and shortest path animation.",
+              //   link: "https://github.com/Aashi-001/visualiser",
+              //   bullets: [
+              //     "Frontend in React with dynamic graph editing and animation",
+              //     "Implemented Dijkstra’s algorithm step-by-step",
+              //     "Clean UI for educational and demonstration purposes",
+              //   ],
+              // },
+              {
+                name: "YTDownloader",
+                desc: "A CLI tool to download, trim, and convert YouTube videos using `yt-dlp` and `ffmpeg`.",
+                link: "https://github.com/Aashi-001/ytdownloader",
+                bullets: [
+                  "Downloads high-quality videos using `yt-dlp` and merges streams into MKV format",
+                  "Trims videos between custom start and end times with precise `ffmpeg` control",
+                  "Converts trimmed clips to MP4 with re-encoded audio for universal compatibility",
                 ],
               },
               {
@@ -334,23 +376,14 @@ export default function Portfolio() {
                 ],
               },
               {
-                name: "Verdant Voyages",
-                desc: "A hackathon project that rewards users for eco-conscious accommodation choices using a full-stack MERN architecture.",
-                link: "https://github.com/Aashi-001/techtinkerers_hackout",
+                name: "HTTP Server (from scratch)",
+                desc: "A lightweight static file server built in C, implementing core HTTP/1.0 features.",
+                link: "https://github.com/Aashi-001/httpServer",
                 bullets: [
-                  "Team project for a hackathon (3 members)",
-                  "Built eco-score logic to promote green travel",
-                  "Used MongoDB, Express, React, Node.js (MERN stack)",
-                ],
-              },
-              {
-                name: "Graph Visualizer",
-                desc: "React-based Dijkstra path visualizer with interactive node editing and shortest path animation.",
-                link: "https://github.com/Aashi-001/visualiser",
-                bullets: [
-                  "Frontend in React with dynamic graph editing and animation",
-                  "Implemented Dijkstra’s algorithm step-by-step",
-                  "Clean UI for educational and demonstration purposes",
+                  "Built using low-level socket programming (C) without external libraries",
+                  "Serves static files with proper MIME types and HTTP status responses (200, 404, etc.)",
+                  "Implements basic request parsing, error handling, and multithreading",
+                  "Designed based on RFC1945 for learning HTTP protocols and system programming",
                 ],
               },
               {
@@ -365,24 +398,13 @@ export default function Portfolio() {
                 ],
               },
               {
-                name: "YTDownloader",
-                desc: "A CLI tool to download, trim, and convert YouTube videos using `yt-dlp` and `ffmpeg`.",
-                link: "https://github.com/Aashi-001/ytdownloader",
+                name: "Weatherify",
+                desc: "A full-stack weather dashboard using OpenWeatherMap API for real-time weather updates.",
+                link: "https://weatherifyui.onrender.com/",
                 bullets: [
-                  "Downloads high-quality videos using `yt-dlp` and merges streams into MKV format",
-                  "Trims videos between custom start and end times with precise `ffmpeg` control",
-                  "Converts trimmed clips to MP4 with re-encoded audio for universal compatibility",
-                ],
-              },
-              {
-                name: "HTTP Server (from scratch)",
-                desc: "A lightweight static file server built in C, implementing core HTTP/1.0 features.",
-                link: "https://github.com/Aashi-001/http-server",
-                bullets: [
-                  "Built using low-level socket programming (C) without external libraries",
-                  "Serves static files with proper MIME types and HTTP status responses (200, 404, etc.)",
-                  "Implements basic request parsing, error handling, and multithreading",
-                  "Designed based on RFC1945 for learning HTTP protocols and system programming",
+                  "Client-server structure for frontend-backend separation",
+                  "Live weather fetched using OpenWeatherMap API",
+                  "Deployed and styled with dynamic feedback",
                 ],
               },
             ].map((proj) => (
@@ -422,10 +444,10 @@ export default function Portfolio() {
                 desc: "A team project to isolate speakers' voices from mixed audio using classical signal processing and Random Forest classification.",
                 link: "https://github.com/Aashi-001",
                 bullets: [
-                  "Used nussl's REPET, REPET-Sim, and 2DFT algorithms to separate foreground/background signals",
-                  "Evaluated quality with PSNR, SNR, and KL Divergence metrics",
-                  "Built a Gradio demo to allow users to upload and separate audio files",
-                  "Trained a Random Forest model on extracted time-frequency features for classification",
+                  "Used nussl's REPET, REPET-Sim, and 2DFT algorithms to separate foreground/background signals.",
+                  "Evaluated quality with PSNR, SNR, and KL Divergence metrics.",
+                  "Built a Gradio demo to allow users to upload and separate audio files.",
+                  "Trained a Random Forest model on extracted time-frequency features for classification.",
                 ],
               },
               {
@@ -433,9 +455,19 @@ export default function Portfolio() {
                 desc: "Improved and deployed an AI-based web tool for molecular sweetness prediction by integrating JSME editor and refining the UI using Flask.",
                 link: "https://cosylab.iiitd.edu.in/sweetpred/",
                 bullets: [
-                  "Enhanced the UI of the SweetPred web app for better user experience",
-                  "Integrated JSME Molecular Editor for drawing chemical structures",
-                  "Deployed the updated version using Flask and hosted it with user-friendly access",
+                  "Enhanced the UI of the SweetPred web app for better user experience.",
+                  "Integrated JSME Molecular Editor for drawing chemical structures.",
+                  "Deployed the updated version using Flask and hosted it with user-friendly access.",
+                ],
+              },
+              {
+                name: "QUIC vs TCP Performance Evaluation on Android",
+                desc: "Empirical comparison of QUIC and TCP protocols for video streaming and file transfers on a rooted Android device under varied mobility and network conditions.",
+                link: "https://youtu.be/xvFZjo5PgG0?si=qF-0BmHpVtvWbl5i",
+                bullets: [
+                  "Deployed OpenLiteSpeed server with HTTP/3 and HTTP/2 support; tested playback and download workloads over 4G and WiFi while sitting and walking.",
+                  "Measured CPU usage, memory consumption, rebuffer metrics, and analyzed protocol fallback from QUIC to TCP using adb, tcpdump, and DevTools.",
+                  "Discovered trade-offs: QUIC enabled faster playback in stable networks but incurred higher CPU usage and fallback under mobile 4G conditions.",
                 ],
               },
             ].map((proj) => (
