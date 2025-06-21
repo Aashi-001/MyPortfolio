@@ -442,7 +442,7 @@ export default function Portfolio() {
               {
                 name: "Speaker Source Separation",
                 desc: "A team project to isolate speakers' voices from mixed audio using classical signal processing and Random Forest classification.",
-                link: "https://github.com/Aashi-001",
+                link: "https://huggingface.co/spaces/Aashiue/speaker-source-separation",
                 bullets: [
                   "Used nussl's REPET, REPET-Sim, and 2DFT algorithms to separate foreground/background signals.",
                   "Evaluated quality with PSNR, SNR, and KL Divergence metrics.",
