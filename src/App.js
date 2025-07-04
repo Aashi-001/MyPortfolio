@@ -331,9 +331,9 @@ export default function Portfolio() {
                 desc: "Custom application-layer load balancer in Go with dynamic request routing and performance benchmarking.",
                 link: "https://github.com/Aashi-001/Load-Balancer",
                 bullets: [
-                  "Built a load balancer in Go that distributes HTTP requests across multiple backend servers using round-robin and weighted strategies.",
-                  "Benchmarked performance under simulated load using concurrent clients and measured response latency and throughput.",
-                  "Implemented custom connection handling, routing logic, and graceful backend failure detection.",
+                  "Built a load balancer in Go that distributes HTTP requests across multiple backend servers using round-robin and least connections strategies.",
+                  // "Benchmarked performance under simulated load using concurrent clients and measured response latency and throughput.",
+                  // "Implemented custom connection handling, routing logic, and graceful backend failure detection.",
                 ],
               },
               {
