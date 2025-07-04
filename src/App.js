@@ -281,6 +281,7 @@ export default function Portfolio() {
               "SQL",
               "MongoDB",
               "Networking",
+              "WebRTC",
             ].map((skill) => (
               <span key={skill} style={{ backgroundColor: colors.teal, color: colors.cream, padding: "0.4rem 0.8rem", borderRadius: "30px", fontSize: "0.9rem", fontWeight: "600",}}>
                 {skill}
@@ -303,6 +304,17 @@ export default function Portfolio() {
             }}
           >
             {[
+              {
+                name: "FileHopP2P",
+                desc: "A web-based peer-to-peer file sharing tool using WebRTC with encrypted chunked transfers.",
+                link: "https://p2p-filesharing.vercel.app",
+                bullets: [
+                  "Enables secure, direct peer-to-peer file transfers via WebRTC data channels with chunked encryption.",
+                  "Custom Node.js WebSocket signaling server with TURN fallback for robust NAT traversal.",
+                  "Real-time transfer progress tracking with intuitive React UI, optimized for large files.",
+                  "Deployed with custom TURN server on AWS Lightsail to ensure connectivity across restrictive networks."
+                ],
+              },
               {
                 name: "cpuPulse",
                 desc: "A  CLI tool to run arbitrary commands and sample their CPU and memory usage in real-time.",
