@@ -3,21 +3,29 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function Portfolio() {
   const colors = {
-    darkBlue: "#01204E",
-    teal: "#028391",
-    cream: "#F6DCAC",
-    peach: "#FAA968",
-    orange: "#F85525",
-    coral: "#FF7D5C",
+    // darkBlue: "#01204E",
+    // teal: "#028391",
+    // cream: "#F6DCAC",
+    // peach: "#FAA968",
+    // orange: "#F85525",
+    // coral: "#FF7D5C",
+    // steelBlue: "#19647E",
+    darkBlue: "#000000ff",
+    teal: "#2f2f2fff",
+    cream: "#272727ff",
+    peach: "#000000ff",
+    orange: "#000000ff",
+    coral: "#ffffffff",
     steelBlue: "#19647E",
   };
+  
 
   const sectionStyle = {
     backgroundColor: colors.cream,
     padding: "2rem",
     borderRadius: "0.75rem",
-    boxShadow: `5px 5px 0 ${colors.teal}`,
-    border: `3px dashed ${colors.orange}`,
+    boxShadow: `5px 5px 0 ${colors.coral}`,
+    border: `3px dashed ${colors.coral}`,
     marginBottom: "2.5rem",
   };
 
@@ -31,14 +39,14 @@ export default function Portfolio() {
   };
 
   const linkStyle = {
-    color: colors.cream,
+    color: "white",
     backgroundColor: colors.steelBlue,
     padding: "0.5rem 0.7rem",
     borderRadius: "30px",
     border: `2px solid ${colors.teal}`,
     fontWeight: "700",
     textDecoration: "none",
-    boxShadow: `2px 2px 0 ${colors.orange}`,
+    boxShadow: `2px 2px 0 ${colors.coral}`,
     transition: "all 0.3s ease",
   };
 
@@ -54,7 +62,7 @@ export default function Portfolio() {
     }
 
     .rainbow-text {
-      background: linear-gradient(90deg, #ff5f6d, #ffc371, #47e891, #42a5f5, #7e57c2);
+      background: linear-gradient(135deg, #ff5f6d, #ffc371, #47e891, #42a5f5, #7e57c2);
       background-size: 300% 300%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -130,12 +138,12 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div style={{...retroFont, background: `linear-gradient(${colors.peach}, ${colors.peach} 30%, ${colors.darkBlue} 60%)`, minHeight: "100vh", padding: "0",}}>
+    <div style={{...retroFont, background: `linear-gradient(180deg, ${colors.peach}, ${colors.peach} 30%, ${colors.darkBlue} 60%)`, minHeight: "100vh", padding: "0",backgroundAttachment: "fixed",}}>
       <style>{globalStyles}</style>
 
       {/* Navbar */}
       <nav style={{backgroundColor: colors.darkBlue, padding: "1rem 2rem", color: colors.cream, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap",}}>
-        <span style={{ textAlign: "center", fontSize: "1.5em" }}> Aashi </span>
+        <span style={{ textAlign: "center", fontSize: "1.5em", color: "white" }}> Aashi </span>
         <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
           {[
             "~/about",
@@ -144,7 +152,7 @@ export default function Portfolio() {
             "~/education",
             "~/contact",
           ].map((section) => (
-            <a key={section} href={`#${section.slice(2)}`} style={{color: colors.cream, textDecoration: "none", fontWeight: "bold",}}>
+            <a key={section} href={`#${section.slice(2)}`} style={{color: colors.coral, textDecoration: "none", fontWeight: "bold",}}>
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </a>
           ))}
@@ -154,7 +162,7 @@ export default function Portfolio() {
       <div className="responsive-container" style={{ maxWidth: "960px", margin: "0 auto", padding: "2rem" }}>
         {/* Header */}
         <header style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h1 style={{fontSize: "3rem", fontWeight: "700", fontStyle: "italic", color: colors.darkBlue,}}>
+          <h1 style={{fontSize: "3rem", fontWeight: "700", fontStyle: "italic", color: "white",}}>
             <Typewriter
               words={["Hi, I'm Aashi", "Coder", "Guitarist"]}
               loop={false}
@@ -165,13 +173,16 @@ export default function Portfolio() {
               delaySpeed={1000}
             />
           </h1>
-          <p style={{fontSize: "1.2rem", color: colors.teal, fontWeight: "550",}}> Coder | Guitarist </p>
+          <p style={{fontSize: "1.2rem", color: "white", fontWeight: "550",}}> Coder | Guitarist </p>
         </header>
 
         {/* About */}
+        <h2 style={{fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: "white",}}>
+            About me
+          </h2>
         <section id="about" style={{...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.teal}`,}}>
-          <h2 style={{fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.8rem", color: colors.orange,}}> About Me </h2>
-          <p style={{lineHeight: "1.6", color: colors.darkBlue, fontWeight: "520",}} >
+          {/* <h2 style={{fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.8rem", color: colors.orange,}}> About Me </h2> */}
+          <p style={{lineHeight: "1.6", color: "white", fontWeight: "520",}} >
             I'm Aashi, a passionate computer science student who enjoys solving
             real-world problems through code.
           </p>
@@ -180,33 +191,37 @@ export default function Portfolio() {
         <br></br>
         {/* Experience */}
         <section id="experience" style={{ marginBottom: "2rem" }}>
-          <h2 style={{fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: colors.orange,}}>
+          <h2 style={{fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: "white",}}>
             Experience
           </h2>
           <div style={cardStyle}>
             <div style={{ marginBottom: "1.5rem" }}>
               <div
                 style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
-                <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem", color: colors.darkBlue,}}>
+                <h3 style={{ margin: 0, fontWeight: "bold", marginBottom: "0.2rem", color: "white",}}>
                   Indraprastha Institute of Information Technology, Delhi -
                   Teaching Assistant
                 </h3>
-                <span style={{fontSize: "0.95rem",fontStyle: "italic",color: colors.orange,}}>
+                <span style={{fontSize: "0.95rem",fontStyle: "italic",color: colors.coral,whiteSpace: "nowrap",}}>
                   Aug 2024 – Present
                 </span>
               </div>
-              <p style={{fontSize: "0.9rem",color: colors.teal,marginBottom: "0.8rem",}}> New Delhi, India · 9 months </p>
+              <p style={{fontSize: "0.9rem",color: colors.coral,marginBottom: "0.8rem",}}> New Delhi, India · 9 months </p>
               <div style={{marginLeft: "1rem",maxWidth: "650px",display: "grid",gridTemplateColumns: "1fr auto",rowGap: "0.4rem",}}>
                 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr auto", rowGap: "0.5rem", columnGap: "1rem", paddingLeft: "1.2rem", fontSize: "0.9rem", color: colors.darkBlue, lineHeight: "1.6",}}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr auto", rowGap: "0.5rem", columnGap: "1rem", paddingLeft: "1.2rem", fontSize: "0.9rem", color: "white", lineHeight: "1.6",}}>
                   
+                  <div>• Computer Networks (CSE232)</div>
+                  
+                  <div style={{ fontStyle: "italic", color: colors.coral }}> Aug 2025 – present</div>
+
                   <div>• Decision Making for Multi-robot Systems (CSE667)</div>
                   
-                  <div style={{ fontStyle: "italic", color: colors.teal }}> Jan 2025 – May 2025</div>
+                  <div style={{ fontStyle: "italic", color: colors.coral }}> Jan 2025 – May 2025</div>
                   
                   <div>• Introduction to Programming (CSE101)</div>
                   
-                  <div style={{ fontStyle: "italic", color: colors.teal }}> Aug 2024 – Dec 2024</div>
+                  <div style={{ fontStyle: "italic", color: colors.coral }}> Aug 2024 – Dec 2024</div>
                 
                 </div>
               </div>
@@ -216,28 +231,17 @@ export default function Portfolio() {
                 style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
                 }}
               >
-                <h3
-                  style={{ fontWeight: "bold", marginBottom: "0.2rem", color: colors.darkBlue,
-                  }}
-                >
+                <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem", color: "white", margin: 0}}>
                   NeenOpal Intelligent Solutions PVT LTD - Data Analyst Intern
                 </h3>
-                <span
-                  style={{ fontSize: "0.95rem", fontStyle: "italic", color: colors.orange,
-                  }}
-                >
+                <span style={{ fontSize: "0.95rem", fontStyle: "italic", color: colors.coral,}}>
                   Jan 2024 – Apr 2024
                 </span>
               </div>
-              <p
-                style={{ fontSize: "0.9rem", color: colors.teal, marginBottom: "0.8rem",
-                }}
-              >
+              <p style={{ fontSize: "0.9rem", color: colors.coral, marginBottom: "0.8rem",}}>
                 Bangalore, India (Remote) · 4 months
               </p>
-              <ul
-                style={{ paddingLeft: "1.2rem", fontSize: "0.9rem", color: colors.darkBlue, lineHeight: "1.6",
-                }}
+              <ul style={{ paddingLeft: "1.2rem", fontSize: "0.9rem", color: "white", lineHeight: "1.6",}}
               >
                 <li>
                   Managed and optimized databases on the AWS cloud platform,
@@ -262,8 +266,9 @@ export default function Portfolio() {
 
         <br></br>
         {/* Skills */}
-        <section id="skills" style={{ ...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.steelBlue}`,}}>
-          <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: colors.orange,}}> Skills</h2>
+        <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: "white",}}> Skills</h2>
+        <section id="skills" style={{ ...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.teal}`,}}>
+          {/* <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: "white",}}> Skills</h2> */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
             {[
               "JavaScript",
@@ -283,7 +288,7 @@ export default function Portfolio() {
               "Networking",
               "WebRTC",
             ].map((skill) => (
-              <span key={skill} style={{ backgroundColor: colors.teal, color: colors.cream, padding: "0.4rem 0.8rem", borderRadius: "30px", fontSize: "0.9rem", fontWeight: "600",}}>
+              <span key={skill} style={{ backgroundColor: colors.teal, color: colors.coral, padding: "0.4rem 0.8rem", borderRadius: "30px", fontSize: "0.9rem", fontWeight: "600",}}>
                 {skill}
               </span>
             ))}
@@ -294,7 +299,7 @@ export default function Portfolio() {
         {/* Projects */}
         <section id="projects" style={{ marginBottom: "2rem" }}>
           <h2
-            style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: colors.orange,
+            style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: colors.coral,
             }}
           >
             Projects
@@ -357,16 +362,6 @@ export default function Portfolio() {
                   "Implemented an interactive Gradio interface for real-time price prediction by users",
                 ],
               },
-              // {
-              //   name: "Graph Visualizer",
-              //   desc: "React-based Dijkstra path visualizer with interactive node editing and shortest path animation.",
-              //   link: "https://github.com/Aashi-001/visualiser",
-              //   bullets: [
-              //     "Frontend in React with dynamic graph editing and animation",
-              //     "Implemented Dijkstra’s algorithm step-by-step",
-              //     "Clean UI for educational and demonstration purposes",
-              //   ],
-              // },
               {
                 name: "YTDownloader",
                 desc: "A CLI tool to download, trim, and convert YouTube videos using `yt-dlp` and `ffmpeg`.",
@@ -422,20 +417,20 @@ export default function Portfolio() {
             ].map((proj) => (
               <div key={proj.name} className="project-card" style={{ ...cardStyle, width: "48%", boxSizing: "border-box", marginBottom: "1rem",}} >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
-                  <h3 style={{fontWeight: "700",fontSize: "1.1rem",color: colors.darkBlue,margin: 0,flex: 1,}} > {proj.name}</h3>
+                  <h3 style={{fontWeight: "700",fontSize: "1.1rem",color: "white",margin: 0,flex: 1,}} > {proj.name}</h3>
                   <a href={proj.link} style={linkStyle} target="_blank" rel="noopener noreferrer"
                   >
                     View Project →
                   </a>
                 </div>
                 <p
-                  style={{ fontSize: "0.95rem", color: colors.darkBlue, marginBottom: "0.6rem",
+                  style={{ fontSize: "0.95rem", color: "white", marginBottom: "0.6rem",
                   }}
                 >
                   {proj.desc}
                 </p>
                 <ul
-                  style={{ paddingLeft: "1.2rem", color: colors.darkBlue, fontSize: "0.9rem", lineHeight: "1.5",}} >
+                  style={{ paddingLeft: "1.2rem", color: "white", fontSize: "0.9rem", lineHeight: "1.5",}} >
                   {proj.bullets.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -447,9 +442,10 @@ export default function Portfolio() {
 
         <br></br>
         {/* College/Capstone Projects */}
+        <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: "white",}}> Academic Projects </h2>
         <section id="college-projects" style={{ marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: colors.orange,}}> Academic Projects </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", justifyContent: "space-between",}}>
+          {/* <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: colors.orange,}}> Academic Projects </h2> */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", justifyContent: "space-between", color: "white"}}>
             {[
               {
                 name: "Speaker Source Separation",
@@ -485,11 +481,11 @@ export default function Portfolio() {
             ].map((proj) => (
               <div key={proj.name} className="project-card" style={{ ...cardStyle, width: "48%", boxSizing: "border-box", marginBottom: "1rem",}}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
-                  <h3 style={{ fontWeight: "700", fontSize: "1.1rem", color: colors.darkBlue, margin: 0, flex: 1, }}> {proj.name}</h3>
+                  <h3 style={{ fontWeight: "700", fontSize: "1.1rem", color: "white", margin: 0, flex: 1, }}> {proj.name}</h3>
                   <a href={proj.link} style={linkStyle} target="_blank" rel="noopener noreferrer"> View Project → </a>
                 </div>
-                <p style={{ fontSize: "0.95rem", color: colors.darkBlue, marginBottom: "0.6rem",}}> {proj.desc}</p>
-                <ul style={{ paddingLeft: "1.2rem", color: colors.darkBlue, fontSize: "0.9rem", lineHeight: "1.5", }}>
+                <p style={{ fontSize: "0.95rem", color: "white", marginBottom: "0.6rem",}}> {proj.desc}</p>
+                <ul style={{ paddingLeft: "1.2rem", color: "white", fontSize: "0.9rem", lineHeight: "1.5", }}>
                   {proj.bullets.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -501,46 +497,35 @@ export default function Portfolio() {
 
         <br></br>
         {/* Education */}
+        <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: "white", }}> Education </h2>
         <section id="education" style={{ marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1.2rem", color: colors.orange, }}> Education </h2>
+          
           <div style={cardStyle}>
             <div style={{ marginBottom: "1.5rem" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}> 
-                <h3 style={{ fontWeight: "bold", marginBottom: "0.3rem", color: colors.darkBlue,   }} > Indraprastha Institute of Information Technology, Delhi </h3>
-                <span style={{ fontSize: "0.95rem", fontStyle: "italic", color: colors.teal,   }} >   2024 – 2026 </span>
+                <h3 style={{ fontWeight: "bold", marginBottom: "0.3rem", color: "white", margin: 0 }} > Indraprastha Institute of Information Technology, Delhi </h3>
+                <span style={{ fontSize: "0.95rem", fontStyle: "italic", color: "white", whiteSpace: "nowrap"}} >2024 – 2026 </span>
               </div>
-              <p style={{fontSize: "0.95rem", color: colors.darkBlue, marginBottom: "0.3rem",  }}> Master of Technology, Computer Science and Engineering</p>
-              <p style={{fontSize: "0.9rem",fontStyle: "italic",color: colors.teal, }}> CGPA: 8.31</p>
+              <p style={{fontSize: "0.95rem", color: "white", marginBottom: "0.3rem",  }}> Master of Technology, Computer Science and Engineering</p>
+              <p style={{fontSize: "0.9rem",fontStyle: "italic",color: "white", }}> CGPA: 8.74</p>
             </div>
             <div>
               <div
                 style={{display: "flex",justifyContent: "space-between",alignItems: "center",
                 }}
               >
-                <h3
-                  style={{fontWeight: "bold",marginBottom: "0.3rem",color: colors.darkBlue,
-                  }}
-                >
+                <h3 style={{fontWeight: "bold",marginBottom: "0.3rem",color: "white", margin: 0}}>
                   University Institute of Engineering and Technology, Panjab
                   University, Chandigarh
                 </h3>
-                <span
-                  style={{fontSize: "0.95rem",fontStyle: "italic",color: colors.teal,
-                  }}
-                >
+                <span style={{fontSize: "0.95rem",fontStyle: "italic",color: "white",whiteSpace: "nowrap"}} >
                   2020 – 2024
                 </span>
               </div>
-              <p
-                style={{fontSize: "0.95rem",color: colors.darkBlue,marginBottom: "0.3rem",
-                }}
-              >
+              <p style={{fontSize: "0.95rem", color: "white", marginBottom: "0.3rem",}}>
                 Bachelor of Engineering, Computer Science and Engineering
               </p>
-              <p
-                style={{ fontSize: "0.9rem", fontStyle: "italic", color: colors.teal,
-                }}
-              >
+              <p style={{ fontSize: "0.9rem", fontStyle: "italic", color: "white",}}>
                 CGPA: 8.97
               </p>
             </div>
@@ -548,39 +533,33 @@ export default function Portfolio() {
         </section>
         <br></br>
         {/* Extra-Curriculars & Achievements */}
+        <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1rem", color: "white",}}> Extra-Curriculars & Achievements </h2>
         <section
           id="extras"
           style={{ ...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.teal}`, fontWeight: "550",}} >
-          <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1rem", color: colors.orange,}}> Extra-Curriculars & Achievements </h2>
-          <ul style={{ paddingLeft: "1.2rem", fontSize: "0.95rem", color: colors.darkBlue, lineHeight: "1.7",}}>
+          <ul style={{ paddingLeft: "1.2rem", fontSize: "0.95rem", color: "white", lineHeight: "1.7",}}>
             <li>
-              Co-Convener of Euphoria UIET – official music committee at UIET
-              Panjab University.
+              Co-Convener of Euphoria UIET – official music committee at UIET Panjab University.
             </li>
             <li>Active member of AudioBytes, IIIT Delhi.</li>
             <li>
-              District Topper in Class 12 Science Stream with 100/100 in
-              Mathematics.
+              District Topper in Class 12 Science Stream with 100/100 in Mathematics.
             </li>
             <li>
-              Represented Haryana at the 25th National Children Science
-              Congress, 2017.
+              Represented Haryana at the 25th National Children Science Congress, 2017.
             </li>
             <li>
-              Codeforces Rating: 1035 | Solved 800+ DSA problems in C++ and 100+
-              SQL problems on LeetCode/GFG/HackerRank.
+              Solved 800+ DSA problems in C++ and 100+ SQL problems on LeetCode/GFG/HackerRank.
             </li>
           </ul>
         </section>
         <br></br>
         {/* Hobbies */}
+        <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: "white",}}> Hobbies & Interests </h2>
         <section
           id="hobbies"
-          style={{ ...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.peach}`, // fontWeight: "550"
-          }}
-        >
-          <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: colors.orange,}}> Hobbies & Interests </h2>
-          <ul style={{paddingLeft: "1.2rem",fontSize: "0.95rem",color: colors.darkBlue,lineHeight: "1.7",fontWeight: "550",}}>
+          style={{ ...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.teal}`,}} >
+          <ul style={{paddingLeft: "1.2rem",fontSize: "0.95rem",color: "white",lineHeight: "1.7",fontWeight: "550",}}>
             <li> Playing and listening to music.</li>
             <li> Watching cricket (king!) and tennis.</li>
             <li> Reading history and fictions.</li>
@@ -589,8 +568,8 @@ export default function Portfolio() {
         </section>
 
         {/* Coding Profiles */}
+          <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: "white",textAlign: "center"}}> Coding Profiles </h2>
         <section id="coding-profiles" style={{ textAlign: "center", marginTop: "2rem" }}>
-          <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: colors.orange,}}> Coding Profiles </h2>
           <div style={{display: "flex",justifyContent: "center",gap: "2rem",flexWrap: "wrap",}}>
             <a href="https://leetcode.com/aashi_uiet" style={linkStyle} target="_blank" rel="noopener noreferrer">LeetCode (900+ solved)</a>
             <a href="https://codeforces.com/profile/aashi2673" style={linkStyle} target="_blank" rel="noopener noreferrer"> Codeforces ({cfRank} - {cfRating ?? "Loading..."})</a>
@@ -600,15 +579,16 @@ export default function Portfolio() {
 
         {/* Contact */}
         <section id="contact" style={{ textAlign: "center" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1rem", color: colors.orange,}}> Get in Touch</h2>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1rem", color: "white",}}> Get in Touch</h2>
           <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap",}}>
             <a href="mailto:aashidenod@gmail.com" style={linkStyle}> Email </a>
             <a href="https://github.com/Aashi-001" style={linkStyle}> GitHub</a>
             <a href="https://www.linkedin.com/in/aashi-38621919b/" style={linkStyle}> LinkedIn</a>
+            <a href="https://x.com/im_Aaashi" style={linkStyle}> Twitter</a>
           </div>
         </section>
 
-        <footer style={{marginTop: "3rem", textAlign: "center", fontSize: "0.95rem", color: colors.cream,}}>
+        <footer style={{marginTop: "3rem", textAlign: "center", fontSize: "0.95rem", color: colors.coral,}}>
           &copy; {new Date().getFullYear()} Aashi. Designed with a retro flair
           🎸
         </footer>
