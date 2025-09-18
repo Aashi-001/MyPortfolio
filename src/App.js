@@ -14,7 +14,7 @@ export default function Portfolio() {
     teal: "#2f2f2fff",
     cream: "#272727ff",
     peach: "#000000ff",
-    orange: "#000000ff",
+    orange: "#ff6a00ff",
     coral: "#ffffffff",
     steelBlue: "#19647E",
   };
@@ -24,8 +24,8 @@ export default function Portfolio() {
     backgroundColor: colors.cream,
     padding: "2rem",
     borderRadius: "0.75rem",
-    boxShadow: `5px 5px 0 ${colors.coral}`,
-    border: `3px dashed ${colors.coral}`,
+    boxShadow: `5px 5px 0 #ff6a00ff`, //${colors.coral}`,
+    // border: `3px dashed #ff6a00ff`,//${colors.coral}`,
     marginBottom: "2.5rem",
   };
 
@@ -33,7 +33,8 @@ export default function Portfolio() {
     ...sectionStyle,
     flex: "1 1 45%",
     backgroundColor: colors.cream,
-    borderLeft: `10px solid ${colors.teal}`,
+    // borderLeft: `10px solid ${colors.teal}`,
+    borderLeft: `10px solid #ff6a00ff`,
     transition: "transform 0.3s ease-in-out",
     fontWeight: "520",
   };
@@ -43,7 +44,7 @@ export default function Portfolio() {
     backgroundColor: colors.steelBlue,
     padding: "0.5rem 0.7rem",
     borderRadius: "30px",
-    border: `2px solid ${colors.teal}`,
+    // border: `2px solid ${colors.teal}`,
     fontWeight: "700",
     textDecoration: "none",
     boxShadow: `2px 2px 0 ${colors.coral}`,
@@ -55,6 +56,7 @@ export default function Portfolio() {
   };
 
   const globalStyles = `
+  html { scroll-behavior: smooth; }
     @keyframes rainbowShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -164,7 +166,7 @@ export default function Portfolio() {
         <header style={{ textAlign: "center", marginBottom: "3rem" }}>
           <h1 style={{fontSize: "3rem", fontWeight: "700", fontStyle: "italic", color: "white",}}>
             <Typewriter
-              words={["Hi, I'm Aashi", "Coder", "Guitarist"]}
+              words={["Hi, I'm Aashi", "Coder", "Guitarist", "Researcher"]}
               loop={false}
               cursor
               cursorStyle="|"
@@ -173,7 +175,7 @@ export default function Portfolio() {
               delaySpeed={1000}
             />
           </h1>
-          <p style={{fontSize: "1.2rem", color: "white", fontWeight: "550",}}> Coder | Guitarist </p>
+          <p style={{fontSize: "1.2rem", color: "white", fontWeight: "550",}}> Coder | Guitarist | Researcher </p>
         </header>
 
         {/* About */}
@@ -195,6 +197,26 @@ export default function Portfolio() {
             Experience
           </h2>
           <div style={cardStyle}>
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
+                <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem", color: "white", margin: 0}}>
+                  Network Research Lab, IIITD - PG Researcher
+                </h3>
+                <span style={{ fontSize: "0.95rem", fontStyle: "italic", color: colors.coral,}}>
+                  May 2025 – present
+                </span>
+              </div>
+              <p style={{ fontSize: "0.9rem", color: colors.coral, marginBottom: "0.8rem",}}>
+                New Delhi, India · 5 months
+              </p>
+              <p style={{color:"white"}}>
+                Building a novel system that intelligently switches between 
+                QUIC and TCP transport protocols for video streaming on Android devices. 
+                By monitoring real-time device resource stats (e.g., memory pressure, CPU, 
+                network conditions), the system selects the optimal protocol to maximize 
+                playback quality and robustness.
+              </p>
+            </div>
             <div style={{ marginBottom: "1.5rem" }}>
               <div
                 style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
@@ -206,7 +228,7 @@ export default function Portfolio() {
                   Aug 2024 – Present
                 </span>
               </div>
-              <p style={{fontSize: "0.9rem",color: colors.coral,marginBottom: "0.8rem",}}> New Delhi, India · 9 months </p>
+              <p style={{fontSize: "0.9rem",color: colors.coral,marginBottom: "0.8rem",}}> New Delhi, India · 1 yr 2 months </p>
               <div style={{marginLeft: "1rem",maxWidth: "650px",display: "grid",gridTemplateColumns: "1fr auto",rowGap: "0.4rem",}}>
                 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr auto", rowGap: "0.5rem", columnGap: "1rem", paddingLeft: "1.2rem", fontSize: "0.9rem", color: "white", lineHeight: "1.6",}}>
@@ -227,10 +249,7 @@ export default function Portfolio() {
               </div>
             </div>
             <div>
-              <div
-                style={{ display: "flex", justifyContent: "space-between", alignItems: "center",
-                }}
-              >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
                 <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem", color: "white", margin: 0}}>
                   NeenOpal Intelligent Solutions PVT LTD - Data Analyst Intern
                 </h3>
@@ -539,9 +558,14 @@ export default function Portfolio() {
           style={{ ...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.teal}`, fontWeight: "550",}} >
           <ul style={{ paddingLeft: "1.2rem", fontSize: "0.95rem", color: "white", lineHeight: "1.7",}}>
             <li>
-              Co-Convener of Euphoria UIET – official music committee at UIET Panjab University.
+              Coordinator @SPIC MACAY-IIITD (July'25 - present).
             </li>
-            <li>Active member of AudioBytes, IIIT Delhi.</li>
+            <li>
+              Active member of AudioBytes, IIIT Delhi (Dec'24 - present). Won 1st prize in Battle of Bands, as Bass Guitarist
+              </li>
+            <li>
+              Co-Convener of Euphoria UIET – official music committee at UIET Panjab University (May'22 - May'23).
+            </li>
             <li>
               District Topper in Class 12 Science Stream with 100/100 in Mathematics.
             </li>
@@ -561,7 +585,7 @@ export default function Portfolio() {
           style={{ ...sectionStyle, marginBottom: "2rem", borderLeft: `6px solid ${colors.teal}`,}} >
           <ul style={{paddingLeft: "1.2rem",fontSize: "0.95rem",color: "white",lineHeight: "1.7",fontWeight: "550",}}>
             <li> Playing and listening to music.</li>
-            <li> Watching cricket (king!) and tennis.</li>
+            <li> Watching cricket (king!), very recently football (you'll never walk alone) and tennis.</li>
             <li> Reading history and fictions.</li>
             <li> Learning about new cultures and languages.</li>
           </ul>
@@ -589,7 +613,7 @@ export default function Portfolio() {
         </section>
 
         <footer style={{marginTop: "3rem", textAlign: "center", fontSize: "0.95rem", color: colors.coral,}}>
-          &copy; {new Date().getFullYear()} Aashi. Designed with a retro flair
+          &copy; {new Date().getFullYear()} Aashi.
           🎸
         </footer>
       </div>
