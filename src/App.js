@@ -34,7 +34,7 @@ export default function Portfolio() {
     flex: "1 1 45%",
     backgroundColor: colors.cream,
     // borderLeft: `10px solid ${colors.teal}`,
-    borderLeft: `10px solid #ff6a00ff`,
+    // borderLeft: `10px solid #ff6a00ff`,
     transition: "transform 0.3s ease-in-out",
     fontWeight: "520",
   };
