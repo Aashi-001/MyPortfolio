@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Portfolio() {
   const colors = {
@@ -14,7 +15,8 @@ export default function Portfolio() {
     teal: "#2f2f2fff",
     cream: "#272727ff",
     peach: "#000000ff",
-    orange: "#ff6a00ff",
+    // orange: "#ff6a00ff",
+    orange: "#33FF33",
     coral: "#ffffffff",
     steelBlue: "#19647E",
   };
@@ -24,7 +26,7 @@ export default function Portfolio() {
     backgroundColor: colors.cream,
     padding: "2rem",
     borderRadius: "0.75rem",
-    boxShadow: `5px 5px 0 #ff6a00ff`, //${colors.coral}`,
+    boxShadow: `5px 5px 0 #33FF33`, //${colors.coral}`,
     // border: `3px dashed #ff6a00ff`,//${colors.coral}`,
     marginBottom: "2.5rem",
   };
@@ -52,7 +54,7 @@ export default function Portfolio() {
   };
 
   const retroFont = {
-    fontFamily: "'Courier New', Courier, monospace",
+    fontFamily: "'Courier New', Courier, monospace, Fira Code",
   };
 
   const globalStyles = `
@@ -140,13 +142,14 @@ export default function Portfolio() {
   }, []);
 
   return (
+    
     <div style={{...retroFont, background: `linear-gradient(180deg, ${colors.peach}, ${colors.peach} 30%, ${colors.darkBlue} 60%)`, minHeight: "100vh", padding: "0",backgroundAttachment: "fixed",}}>
       <style>{globalStyles}</style>
 
       {/* Navbar */}
-      <nav style={{backgroundColor: colors.darkBlue, padding: "1rem 2rem", color: colors.cream, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap",}}>
-        <span style={{ textAlign: "center", fontSize: "1.5em", color: "white" }}> Aashi </span>
-        <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+      <nav style={{backgroundColor: colors.darkBlue, padding: "1rem 2rem", color: "#33FF33", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap",}}>
+        <span style={{ textAlign: "center", fontSize: "1.5em", color: "#33FF33" }}> Aashi </span>
+        <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", color: "#33FF33" }}>
           {[
             "~/about",
             "~/experience",
@@ -154,7 +157,7 @@ export default function Portfolio() {
             "~/education",
             "~/contact",
           ].map((section) => (
-            <a key={section} href={`#${section.slice(2)}`} style={{color: colors.coral, textDecoration: "none", fontWeight: "bold",}}>
+            <a key={section} href={`#${section.slice(2)}`} style={{color: "#33FF33", textDecoration: "none", fontWeight: "bold",}}>
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </a>
           ))}
@@ -164,7 +167,7 @@ export default function Portfolio() {
       <div className="responsive-container" style={{ maxWidth: "960px", margin: "0 auto", padding: "2rem" }}>
         {/* Header */}
         <header style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h1 style={{fontSize: "3rem", fontWeight: "700", fontStyle: "italic", color: "white",}}>
+          <h1 style={{fontSize: "3rem", fontWeight: "700", fontStyle: "italic", color: "#33FF33",}}>
             <Typewriter
               words={["Hi, I'm Aashi", "Coder", "Guitarist", "Researcher"]}
               loop={false}
@@ -175,7 +178,7 @@ export default function Portfolio() {
               delaySpeed={1000}
             />
           </h1>
-          <p style={{fontSize: "1.2rem", color: "white", fontWeight: "550",}}> Coder | Guitarist | Researcher </p>
+          <p style={{fontSize: "1.2rem", color: "#33FF33", fontWeight: "550",}}> Coder | Guitarist | Researcher </p>
         </header>
 
         {/* About */}
@@ -200,14 +203,34 @@ export default function Portfolio() {
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
                 <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem", color: "white", margin: 0}}>
-                  Network Research Lab, IIITD - PG Researcher
+                  Qualcomm - Engineering Intern
                 </h3>
                 <span style={{ fontSize: "0.95rem", fontStyle: "italic", color: colors.coral,}}>
-                  May 2025 – present
+                  Jan 2026 – Present
                 </span>
               </div>
               <p style={{ fontSize: "0.9rem", color: colors.coral, marginBottom: "0.8rem",}}>
-                New Delhi, India · 5 months
+                Hyderabad, India · 1 month
+              </p>
+              <p style={{color:"white"}}>
+                {/* Building a novel system that intelligently switches between 
+                QUIC and TCP transport protocols for video streaming on Android devices. 
+                By monitoring real-time device resource stats (e.g., memory pressure, CPU, 
+                network conditions), the system selects the optimal protocol to maximize 
+                playback quality and robustness. */}
+                Learning and Growing.
+              </p>
+
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center",}}>
+                <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem", color: "white", margin: 0}}>
+                  Network Research Lab, IIITD - PG Researcher
+                </h3>
+                <span style={{ fontSize: "0.95rem", fontStyle: "italic", color: colors.coral,}}>
+                  May 2025 – Dec 2025
+                </span>
+              </div>
+              <p style={{ fontSize: "0.9rem", color: colors.coral, marginBottom: "0.8rem",}}>
+                New Delhi, India · 8 months
               </p>
               <p style={{color:"white"}}>
                 Building a novel system that intelligently switches between 
@@ -225,17 +248,17 @@ export default function Portfolio() {
                   Teaching Assistant
                 </h3>
                 <span style={{fontSize: "0.95rem",fontStyle: "italic",color: colors.coral,whiteSpace: "nowrap",}}>
-                  Aug 2024 – Present
+                  Aug 2024 – Dec 2025
                 </span>
               </div>
-              <p style={{fontSize: "0.9rem",color: colors.coral,marginBottom: "0.8rem",}}> New Delhi, India · 1 yr 2 months </p>
+              <p style={{fontSize: "0.9rem",color: colors.coral,marginBottom: "0.8rem",}}> New Delhi, India · 1 yr 6 months </p>
               <div style={{marginLeft: "1rem",maxWidth: "650px",display: "grid",gridTemplateColumns: "1fr auto",rowGap: "0.4rem",}}>
                 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr auto", rowGap: "0.5rem", columnGap: "1rem", paddingLeft: "1.2rem", fontSize: "0.9rem", color: "white", lineHeight: "1.6",}}>
                   
                   <div>• Computer Networks (CSE232)</div>
                   
-                  <div style={{ fontStyle: "italic", color: colors.coral }}> Aug 2025 – present</div>
+                  <div style={{ fontStyle: "italic", color: colors.coral }}> Aug 2025 – Dec 2025</div>
 
                   <div>• Decision Making for Multi-robot Systems (CSE667)</div>
                   
@@ -290,22 +313,25 @@ export default function Portfolio() {
           {/* <h2 style={{fontSize: "1.5rem",fontWeight: "600",marginBottom: "1rem",color: "white",}}> Skills</h2> */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
             {[
+              "Networking",
+              "Systems",
+              "Linux",
+              "WebRTC",
+              "Go",
+              "C/C++",
+              "Git & GitHub",
+              "Python",
+              "QUIC/TCP",
+              "Wireshark",
+              "SQL",
               "JavaScript",
               "React.js",
               // "Tailwind CSS",
               "Node.js",
-              "Python",
               // "Flask",
-              "Go",
-              "C++",
               // "Java",
-              "Git & GitHub",
               // "Docker",
-              "Linux",
-              "SQL",
               "MongoDB",
-              "Networking",
-              "WebRTC",
             ].map((skill) => (
               <span key={skill} style={{ backgroundColor: colors.teal, color: colors.coral, padding: "0.4rem 0.8rem", borderRadius: "30px", fontSize: "0.9rem", fontWeight: "600",}}>
                 {skill}
@@ -526,7 +552,7 @@ export default function Portfolio() {
                 <span style={{ fontSize: "0.95rem", fontStyle: "italic", color: "white", whiteSpace: "nowrap"}} >2024 – 2026 </span>
               </div>
               <p style={{fontSize: "0.95rem", color: "white", marginBottom: "0.3rem",  }}> Master of Technology, Computer Science and Engineering</p>
-              <p style={{fontSize: "0.9rem",fontStyle: "italic",color: "white", }}> CGPA: 8.74</p>
+              <p style={{fontSize: "0.9rem",fontStyle: "italic",color: "white", }}> CGPA: 8.59</p>
             </div>
             <div>
               <div
@@ -608,7 +634,7 @@ export default function Portfolio() {
             <a href="mailto:aashidenod@gmail.com" style={linkStyle}> Email </a>
             <a href="https://github.com/Aashi-001" style={linkStyle}> GitHub</a>
             <a href="https://www.linkedin.com/in/aashi-38621919b/" style={linkStyle}> LinkedIn</a>
-            <a href="https://x.com/im_Aaashi" style={linkStyle}> Twitter</a>
+            <a href="https://x.com/badmaashii" style={linkStyle}> Twitter</a>
           </div>
         </section>
 
@@ -617,6 +643,7 @@ export default function Portfolio() {
           🎸
         </footer>
       </div>
+      <Analytics />
     </div>
   );
 }
