@@ -516,7 +516,7 @@ export default function Portfolio() {
               {
                 name: "QUIC vs TCP Performance Evaluation on Android",
                 desc: "Empirical comparison of QUIC and TCP protocols for video streaming and file transfers on a rooted Android device under varied mobility and network conditions.",
-                link: "https://youtu.be/xvFZjo5PgG0?si=qF-0BmHpVtvWbl5i",
+                link: "https://www.youtube.com/watch?v=cJz5Ns5GlKM",
                 bullets: [
                   "Deployed OpenLiteSpeed server with HTTP/3 and HTTP/2 support; tested playback and download workloads over 4G and WiFi while sitting and walking.",
                   "Measured CPU usage, memory consumption, rebuffer metrics, and analyzed protocol fallback from QUIC to TCP using adb, tcpdump, and DevTools.",
